@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <meta charset="utf-8">
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+  
+  <style>
+    
+  </style>
+</head>
+<body>
+    <canvas id="drugs" style="position: realtive; height: 80vh; width: 90vw;"></canvas>
+    <script type="text/javascript">
+      var ctx = document.getElementById('drugs').getContext('2d');
+      var drugOverdosesChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ["2012-13", "2013-14", "2014-15", "2015-16", "2016-17", "2017-18", "2018-19", "2019-20", "2020-21", "2021-22", "2022-23", "2023-24", "2024-25", "2025-26"],
+        datasets: [{
+            label: '100% of Growth Starting in 2020-21',
+            data: [227531631, 269613480, 277013850, 280800000, 288600000, 287900000, 298500000, 312300000, 319200000, 321200000, 339300000, 350000000, 343800000, 354700000],
+            backgroundColor: 'rgba(255, 99, 132, 0.4)',
+            borderColor: 'rgba(255,99,132,1)',
+            borderWidth: 1,
+            fill: true
+          },
+          {
+          	label: "50% of Growth Starting in 2020-21",
+          	data: [227531631, 269613480, 277013850, 280800000, 288600000, 287900000, 298500000, 312300000, 315700000, 316700000, 325600000, 330700000, 327800000, 333000000],
+          	backgroundColor: 'rgba(54, 162, 235, 0.4)',
+          	borderColor: 'rgba(54, 162, 235, 1)',
+          	borderWidth: 1,
+            fill: true
+          }
+        ]
+    },
+    options: {
+        responsive: true,
+        title: {
+          display: true,
+          position: "top",
+          text: "Florida Medicaid County Contributions - All Counties",
+          fontSize: 18,
+          fontColor: "#111"
+        },
+        scales: {
+        	xAxes: [{ stacked: false, scaleLabel: { display: true, labelString: 'State Fiscal Year', fontSize: 14 } }],
+          yAxes: [{ stacked: false, scaleLabel: { display: true, labelString: 'Total Medicaid Contributions from All Counties', fontSize: 14 },
+                    ticks: { beginAtZero: true,
+                             callback: function(value, index, values){
+                                        value = value.toString();
+                                        value = value.split(/(?=(?:...)*$)/);
+                                        value = value.join(",");
+                                        return "$" + value;
+                                       }
+                            }
+                  }]
+
+        },
+        tooltips: {
+          enabled: true,
+          mode:'index',
+          intersect: false,
+          callbacks: {
+            label: function(tooltipItem, data) {
+              var value = tooltipItem.yLabel;
+              value = value.toString();
+              value = value.split(/(?=(?:...)*$)/);
+              value = value.join(',');
+              return data.datasets[tooltipItem.datasetIndex].label + ": $" + value;
+            }
+          }
+        }
+    }
+});
+  </script>
+</body>
+</html>

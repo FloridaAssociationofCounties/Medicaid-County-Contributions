@@ -49,16 +49,17 @@
     
   </style>
 </head>
-<body  style="background-image: linear-gradient(to bottom, rgba(3, 4, 47, 1), rgba(3, 4, 47, 0.88));">
+<body  style="background-image: linear-gradient(to bottom, rgba(3, 4, 47, 1), rgba(3, 4, 47, 0.86));">
     <nav class="navbar navbar-default navbar-static" style="text-align: center; background-color: rgba(3, 4, 47, 1); border-color: rgba(3, 4, 47, 1);">
     <div class="navbar-header collapse navbar-collapse js-navbar-collapse">
         <a class="navbar-brand" href="index.html" style="color: white; font-size: 24px;"><b>Florida Medicaid County Contributions: </b></a>
     </div>
     <ul class="nav navbar-nav">
         <li class="active dropdown">
-            <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="background-color: rgba(3, 4, 47, 1); color: white; font-size: 24px"><b>Alachua County</b>
+            <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="background-color: rgba(3, 4, 47, 1); color: white; font-size: 24px"><b>ALL COUNTIES</b>
                 <span class="caret"></span></a>
             <ul class="dropdown-menu pre-scrollable" style="background-color: rgba(3, 4, 47, 1);">
+                <li><a href="index.html" style="font-size: 18px">ALL COUNTIES</a></li>
                 <li><a href="Alachua.html">Alachua County</a></li>
                 <li><a href="Baker.html">Baker County</a></li>
                 <li><a href="Bay.html">Bay County</a></li>
@@ -164,7 +165,7 @@
     </div>
 </nav>
     <canvas id="medicaid" style="position: realtive; height: 80vh; width: 90vw; padding: 0.5%;"></canvas>
-    <a href="FAC Medicaid County Contributions.xlsx" style="color: white; padding-left: 1%;" download><u>Download the entire excel spreadsheet</u></a>
+    <a href="FAC Medicaid County Contributions.xlsx" style="color: white; font-size: 22px; margin-left: 1%;" download><u>Download the entire Microsoft Excel file</u></a>
     <script type="text/javascript">
       var ctx = document.getElementById('medicaid').getContext('2d');
       var drugOverdosesChart = new Chart(ctx, {
@@ -173,7 +174,7 @@
         labels: ["2012-13", "2013-14", "2014-15", "2015-16", "2016-17", "2017-18", "2018-19", "2019-20", "2020-21", "2021-22", "2022-23", "2023-24", "2024-25", "2025-26"],
         datasets: [{
             label: '100% of Growth Starting in 2020-21',
-            data: [3196800,3445488,3540060,3745059,3645901,3436804,3375506,3330394,3416775,3450674,3657906,3786017,3731060,3861407],
+            data: [227531631,269613480,277013850,280800000,288600000,287900000,298500000,312300000,319200000,321200000,339300000,350000000,343800000,354700000],
             backgroundColor: 'rgba(255, 59, 70, 0.4)',
             borderColor: 'rgba(255, 59, 70, 1)',
             borderWidth: 1,
@@ -183,7 +184,7 @@
           },
           {
           	label: "50% of Growth Starting in 2020-21",
-          	data: [3196800,3445488,3540060,3745059,3645901,3436804,3375506,3330394,3379310,3402330,3510210,3577245,3557421,3625172],
+          	data: [227531631,269613480,277013850,280800000,288600000,287900000,298500000,312300000,315700000,316700000,325600000,330700000,327800000,333000000],
           	backgroundColor: 'rgba(54, 162, 235, 0.4)',
           	borderColor: 'rgba(54, 162, 235, 1)',
           	borderWidth: 1,
@@ -198,7 +199,7 @@
         title: {
           display: false,
           position: "top",
-          text: "Florida Medicaid County Contributions - Alachua County",
+          text: "Florida Medicaid County Contributions - All Counties",
           fontSize: 20,
           fontColor: "white"
         },
@@ -211,7 +212,7 @@
                                  borderDash: [5, 15], borderDashOffset: 10
                     }
                   }],
-          yAxes: [{ stacked: false, scaleLabel: { display: true, labelString: 'Total Medicaid Contributions from Alachua County', fontSize: 17, fontColor: "white" },
+          yAxes: [{ stacked: false, scaleLabel: { display: true, labelString: 'Total Medicaid Contributions from All Counties', fontSize: 17, fontColor: "white" },
                     ticks: { beginAtZero: true,
                              fontColor: "white",
                              fontSize: 16,

@@ -27,6 +27,26 @@
   
   <style>
 
+    @-webkit-keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+    @-moz-keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+    @-o-keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+    @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+
+    .fade-in {
+      -webkit-animation: fadeIn ease-in 1;
+      -moz-animation: fadeIn ease-in 1;
+      -o-animation: fadeIn ease-in 1;
+      animation: fadeIn ease-in 1;
+      -webkit-animation-fill-mode: forwards;
+      -moz-animation-fill-mode: forwards;
+      -o-animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
+      -webkit-animation-duration: 0.8s;
+      -moz-animation-duration: 0.8s;
+      -o-animation-duration: 0.8s;
+      animation-duration: 0.8s;
+    }
+
     .pre-scrollable a {
       color: white !important;
     }
@@ -164,7 +184,7 @@
 
     </div>
 </nav>
-    <canvas id="medicaid" style="position: realtive; height: 80vh; width: 90vw; padding: 0.5%;"></canvas>
+    <canvas class="fade-in" id="medicaid" style="position: realtive; height: 80vh; width: 90vw; padding: 0.5%;"></canvas>
     <p><a href="FAC Medicaid County Contributions.xlsx" style="color: white; font-size: 22px; margin-left: 1%;" download><u>Download the entire Microsoft Excel file</u></a></p>
     <script type="text/javascript">
       var ctx = document.getElementById('medicaid').getContext('2d');
